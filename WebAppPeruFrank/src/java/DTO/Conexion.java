@@ -16,10 +16,10 @@ public class Conexion {
     private Connection cnn;
         
     public Conexion(){
-        String driver = "con.mysql.jdbc.Driver";
-        String url ="jdbc:mysql://localhost:3306/peruFrank";
+        String driver = "com.mysql.jdbc.Driver";
+        String url ="jdbc:mysql://localhost:3306/perufrank";
         String usu ="root";
-        String pass = "";
+        String pass ="";
         
         try {
             Class.forName(driver);

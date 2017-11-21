@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.logging.Level;
+import java.sql.DriverManager;
 
 /**
  *
@@ -32,11 +33,12 @@ public class Comunas implements IComunas{
             ps = cnn.getCnn().prepareStatement(SQL_READALL);
             ResultSet res = ps.executeQuery();
             
-            while (res.next()) {                
+            
+            while (res.next()) {               
                 Comuna c = new Comuna();
-                c.setId_comuna(res.getInt("idComuna"));
-                c.setComuna_nombre(res.getString("comunaNombre"));
-                c.setId_provincia(res.getInt("idProvincia"));
+                c.setIdComuna(res.getInt("idComuna"));
+                c.setComunaNombre(res.getString("comunaNombre"));
+                c.setIdProvincia(res.getInt("idProvincia"));
                 lista.add(c);
             }
             

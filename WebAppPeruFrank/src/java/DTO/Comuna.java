@@ -7,34 +7,40 @@ package DTO;
  */
 public class Comuna {
    
-    private int id_comuna;
-    private String comuna_nombre;
-    private int id_provincia;
+    private int idComuna;
+    private String comunaNombre;
+    private int idProvincia;
 
-    public int getId_comuna() {
-        return id_comuna;
+    public Comuna() {
+    }
+    
+    
+
+    public int getIdComuna() {
+        return idComuna;
     }
 
-    public void setId_comuna(int id_comuna) {
-        this.id_comuna = id_comuna;
+    public void setIdComuna(int idComuna) {
+        this.idComuna = idComuna;
     }
 
-    public String getComuna_nombre() {
-        return comuna_nombre;
+    public String getComunaNombre() {
+        return comunaNombre;
     }
 
-    public void setComuna_nombre(String comuna_nombre) {
-        this.comuna_nombre = comuna_nombre;
+    public void setComunaNombre(String comunaNombre) {
+        this.comunaNombre = comunaNombre;
     }
 
-    public int getId_provincia() {
-        return id_provincia;
+    public int getIdProvincia() {
+        return idProvincia;
     }
 
-    public void setId_provincia(int id_provincia) {
-        this.id_provincia = id_provincia;
+    public void setIdProvincia(int idProvincia) {
+        this.idProvincia = idProvincia;
     }
-        
+
+   
     
 
 }

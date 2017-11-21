@@ -101,7 +101,7 @@
                         <select name="comuna" required>
                             <c:forEach var="comunas" items="${listaComunas}">
                     
-                                 <option value="${comunas.idComuna}"><c:out value="${comunas.comunaNombre}"></c:out></option><br>
+                                <b><option value="${comunas.idComuna}"><c:out value="${comunas.comunaNombre}"></c:out></option></b>
                                  
                             </c:forEach>
                         </select>
