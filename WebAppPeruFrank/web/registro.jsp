@@ -13,7 +13,11 @@
         form {
             border: 3px solid #f1f1f1;
         }
-
+        a:link   
+        {   
+            text-decoration:#ffffff;
+            
+        }   
         input[type=text], input[type=password],select {
             width: 100%;
             padding: 12px 20px;
@@ -22,6 +26,7 @@
             border: 1px solid #ccc;
             box-sizing: border-box;
         }
+        
 
         button {
             background-color: #4CAF50;
@@ -91,8 +96,10 @@
                         <input type="text" placeholder="Ingrese Nombre usuario." name="nombreUsuario" required>
                     <label><b>Nombre Completo:</b></label>
                         <input type="text" placeholder="Ingrese nombre completo." name="nombreCompleto" required>    
-                    <label><b>Rut:</b></label>
-                        <input type="text" placeholder="Ingrese rut." name="rutCliente" required>
+                        <label><b>Rut:</b></label><br>
+                        <input type="text" placeholder="Ingrese rut." name="rut"maxlength="8" size="8" required>
+                        -<input type="text" name="digito" placeholder="Digito" value="" maxlength="1" size="1" required/>
+                        <br>
                     <label><b>Ingrese password:</b></label>
                         <input type="password" placeholder="Ingrese password" name="1pss" required>
                     <label><b>Verifique password:</b></label>
@@ -113,8 +120,10 @@
             </div>
             
             <div class="container" style="background-color: #f1f1f1">
-                <button type="button" class="registrobtn">Cancel</button>
-            </div>
+                <button type="button" class="registrobtn" ><a href="loggin.jsp">Cancelar</a></button>
+            </div
+            
+            
         </form> 
     </body>
 </html>
