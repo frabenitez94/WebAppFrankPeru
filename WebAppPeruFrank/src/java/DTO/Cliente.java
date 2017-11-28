@@ -5,7 +5,7 @@ package DTO;
  *
  * @author Francisco Benitez
  */
-public class Cliente {
+public final class Cliente {
     
     private String rut;
     private String nombreUsuario;
@@ -15,6 +15,18 @@ public class Cliente {
     private String direccion;
     private int telefono;
 
+    public Cliente(String rut, String nombreUsuario, String nombreCompleto, String passwd, int idComuna, String direccion, int telefono) {
+        setRut(rut);
+        setNombreUsuario(nombreUsuario);
+        setNombreCompleto(nombreCompleto);
+        setPasswd(passwd);
+        setIdComuna(idComuna);
+        setDireccion(direccion);
+        setTelefono(telefono);
+    }
+
+    public Cliente(){
+    }
     
     
     public String getRut() {

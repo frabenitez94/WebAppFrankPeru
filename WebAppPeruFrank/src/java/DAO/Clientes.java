@@ -25,7 +25,7 @@ public class Clientes implements IClientes{
     
     // Querys de consulta SQL;
     private static final String SQL_INSERT  = "insert into cliente values (?,?,?,?,?,?,?)";
-    private static final String SQL_READUSU = "select *from cliente where usuarioClave=?";
+    private static final String SQL_READ = "select *from cliente where usuarioCliente=?";
     
             
             
@@ -74,19 +74,18 @@ public class Clientes implements IClientes{
     @Override
     public Cliente ValidaLogin(String usu) {
         Cliente c = null;        
+        
         try {
-            ps = cnn.getCnn().prepareStatement(SQL_READUSU);
-            ps.setString(1, usu);
+            ps = cnn.getCnn().prepareStatement(SQL_READ);
             ResultSet res = ps.executeQuery();
-            if (res.next()) {
+            while (res.next()) {               
                 c = new Cliente();
-                c.setNombreUsuario(res.getString("UsuarioCliente"));
-                c.setPasswd(res.getString("claveCliente"));
-                c.setIdComuna(res.getInt("idComuna"));
                 c.setRut(res.getString("rut"));
-                c.setTelefono(res.getInt("telefono"));
+                c.setNombreUsuario(res.getString("usuarioCliente"));
                 c.setNombreCompleto(res.getString("nombreCliente"));
-                c.setDireccion(res.getString("direccion"));
+                c.setPasswd(res.getString("claveCliente"));
+                c.setDireccion(res.getString("direccionCliente"));
+                c.setIdComuna(res.getInt("idComuna"));
             }
         } catch (Exception ex) {
             Logger.getLogger(Clientes.class.getName()).log(Level.SEVERE, null, ex);

@@ -45,7 +45,8 @@ public class SLogin extends HttpServlet {
         Cliente c = new Cliente();
         Conexion cnn = Conexion.getInstance();
         
-        c = cli.ValidaLogin(usuarioCliente);
+        
+        
         if (c.getPasswd() == passwordCliente) {
             
             HttpSession miSession = request.getSession(true);
