@@ -29,6 +29,7 @@ public class Platos {
     
     
     public ArrayList<Plato> LeerTodo() {
+        
         ArrayList<Plato> lista = new ArrayList<>();
         
         try {
@@ -39,7 +40,7 @@ public class Platos {
             while (res.next()) {               
                 Plato p = new Plato();
                 p.setIdPlato(res.getInt("idBebida"));
-                p.setNombre(res.getString("nombreBebida"));
+                p.setNombrePlato(res.getString("nombreBebida"));
                 p.setPrecio(res.getInt("precioBebida"));
                 lista.add(p);
             }

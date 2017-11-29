@@ -11,12 +11,12 @@ package DTO;
  */
 public class Plato {
     private int idPlato;
-    private String nombre;
+    private String nombrePlato;
     private int precio;
 
-    public Plato(int idPlato, String nombre, int precio) {
+    public Plato(int idPlato, String nombrePlato, int precio) {
         setIdPlato(idPlato);
-        setIdPlato(idPlato);
+        setNombrePlato(nombrePlato);
         setPrecio(precio);
     }
     
@@ -27,8 +27,8 @@ public class Plato {
         return idPlato;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombrePlato() {
+        return nombrePlato;
     }
 
     public int getPrecio() {
@@ -39,8 +39,8 @@ public class Plato {
         this.idPlato = idPlato;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombrePlato(String nombrePlato) {
+        this.nombrePlato = nombrePlato;
     }
 
     public void setPrecio(int precio) {

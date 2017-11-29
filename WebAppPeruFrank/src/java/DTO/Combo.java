@@ -10,6 +10,7 @@ package DTO;
  * @author Francisco Benitez
  */
 public class Combo {
+    private int idCombo;
     private Plato plato;
     private Bebida bebida;
 

@@ -9,16 +9,16 @@ import DTO.Fecha;
  */
 public class Pedido {
     
-    private Cliente cliente;
-    private Mesa mesa;
-    private Combo combo;
+    private int idClienteP;
+    private int idMesaP;
+    private int idComboP;
     private int precioPedido;
     private Fecha fecha;
 
-    public Pedido(Cliente cliente, Mesa mesa, Combo combo) {
-        setCliente(cliente);
-        setMesa(mesa);
-        setCombo(combo);
+    public Pedido(int idClienteP, int idMesaP, int idComboP) {
+        setIdClienteP(idClienteP);
+        setIdMesaP(idMesaP);
+        setIdComboP(idComboP);
     }
 
     public Pedido() {
@@ -34,16 +34,16 @@ public class Pedido {
         return fecha;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    public void setIdClienteP(int idClienteP) {
+        this.idClienteP = idClienteP;
     }
 
-    public void setMesa(Mesa mesa) {
-        this.mesa = mesa;
+    public void setIdMesaP(int idMesaP) {
+        this.idMesaP = idMesaP;
     }
 
-    public void setCombo(Combo combo) {
-        this.combo = combo;
+    public void setIdComboP(int idComboP) {
+        this.idComboP = idComboP;
     }
 
     public void setPrecioPedido(int precioPedido) {
@@ -53,19 +53,6 @@ public class Pedido {
     public void setFecha(Fecha fecha) {
         this.fecha = fecha;
     }
-
-    
-    
-    public void calcularPrecio(){
-        int precioBebida;
-        int precioPlato;
-        
-        precioBebida = combo.getBebida().getPrecio();
-        precioPlato = combo.getPlato().getPrecio();
-        
-        precioPedido = precioBebida + precioPlato;
-    }
-    
     
     
 }

@@ -38,11 +38,11 @@ public class Pedidos {
             
             while (res.next()) {               
                 Pedido p = new Pedido();
-                p.setCliente(res.getInt("idBebida"));
-                p.setCombo(res.getString("nombreBebida"));
-                p.setFecha(res.getInt("precioBebida"));
-                p.setMesa(mesa);
-                p.setPrecioPedido(0);
+                p.setIdClienteP(res.getInt("rutClienteP"));
+                p.setIdComboP(res.getInt("idComboF"));
+                p.setIdMesaP(res.getInt("idMesaF"));
+                p.setFecha(res.getString("fecha"));
+                p.setPrecioPedido(res.getByte("total"));
                 lista.add(p);
             }
             
@@ -51,4 +51,7 @@ public class Pedidos {
         }
         return lista;
     }
+    
+    
+    
 }

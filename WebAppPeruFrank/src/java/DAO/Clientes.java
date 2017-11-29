@@ -78,7 +78,7 @@ public class Clientes implements IClientes{
         try {
             ps = cnn.getCnn().prepareStatement(SQL_READ);
             ResultSet res = ps.executeQuery();
-            while (res.next()) {               
+            if(res.next()) {               
                 c = new Cliente();
                 c.setRut(res.getString("rut"));
                 c.setNombreUsuario(res.getString("usuarioCliente"));

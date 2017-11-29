@@ -5,12 +5,14 @@
  */
 package controlador;
 
-import DAO.Clientes;
-import DTO.Cliente;
+import DAO.Bebidas;
+import DAO.Platos;
+import DTO.Bebida;
 import DTO.Conexion;
-import com.sun.corba.se.impl.oa.poa.AOMEntry;
+import DTO.Plato;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,8 +24,8 @@ import javax.servlet.http.HttpSession;
  *
  * @author Francisco Benitez
  */
-@WebServlet(name = "SLogin", urlPatterns = {"/SLogin"})
-public class SLogin extends HttpServlet {
+@WebServlet(name = "SConsultarCarta2", urlPatterns = {"/SConsultarCarta2"})
+public class SConsultarCarta2 extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,30 +39,16 @@ public class SLogin extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String mensaje ; 
-        String usuarioCliente = request.getParameter("uname");
-        String passwordCliente = request.getParameter("psw");
+        Conexion con = Conexion.getInstance();
+        Platos com = new Platos();
+        HttpSession SesComunas = request.getSession(true);
+        ArrayList<Plato> listaPlatos = new ArrayList();
+       
+        listaPlatos = com.LeerTodo();
         
-        Clientes cli = new Clientes();
-        Cliente c = new Cliente();
-        Conexion cnn = Conexion.getInstance();
+        SesComunas.setAttribute("listaPlatos", listaPlatos);
         
-        c = cli.ValidaLogin(usuarioCliente);
-        
-        
-        if (c.getPasswd() == passwordCliente) {
-            
-            HttpSession miSession = request.getSession(true);
-            miSession.setAttribute("cliente", c);
-            response.sendRedirect("pedido.jsp");
-            
-        }
-        else{
-            mensaje= "Clave erronea";
-            HttpSession miSession = request.getSession(true);
-            miSession.setAttribute("mensaje", mensaje);
-            response.sendRedirect("Exito.jsp");
-        }
+        response.sendRedirect("Carta2.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

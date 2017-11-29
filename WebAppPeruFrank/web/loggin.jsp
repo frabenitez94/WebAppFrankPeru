@@ -76,6 +76,8 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <%@include file="index.html" %>
+        
         <form action="SLogin">
             <div class="imgcontainer">
                 <img src="img/descarga.png" alt="Avatar" class="avatar">
@@ -91,7 +93,7 @@
             </div>
 
             <div class="container" style="background-color:#f1f1f1">
-                     <button type="button" class="registrobtn">Cancel</button>
+                     <input type="button" class="registrobtn">Cancel</button>
                     <span class="psw">Nuevo? <a href="SConsultarComunas">Registrate</a></span>
             </div>
         </form>
